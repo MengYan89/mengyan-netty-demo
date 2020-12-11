@@ -29,4 +29,13 @@ public class MessageHeader {
     public void setOpCode(int opCode) {
         this.opCode = opCode;
     }
+
+    @Override
+    public String toString() {
+        return "MessageHeader{" +
+                "version=" + version +
+                ", streamId=" + streamId +
+                ", opCode=" + opCode +
+                '}';
+    }
 }

@@ -38,4 +38,13 @@ public class OrderOperationResult extends OperationResult {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
+
+    @Override
+    public String toString() {
+        return "OrderOperationResult{" +
+                "tableId=" + tableId +
+                ", dish='" + dish + '\'' +
+                ", complete=" + complete +
+                '}';
+    }
 }

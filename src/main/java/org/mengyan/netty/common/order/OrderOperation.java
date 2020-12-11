@@ -38,4 +38,12 @@ public class OrderOperation extends Operation {
     public void setDish(String dish) {
         this.dish = dish;
     }
+
+    @Override
+    public String toString() {
+        return "OrderOperation{" +
+                "tableId=" + tableId +
+                ", dish='" + dish + '\'' +
+                '}';
+    }
 }

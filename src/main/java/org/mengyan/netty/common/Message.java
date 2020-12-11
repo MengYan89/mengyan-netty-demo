@@ -50,4 +50,12 @@ public abstract class Message<T extends MessageBody> {
     public void setMessageBody(T messageBody) {
         this.messageBody = messageBody;
     }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "messageHeader=" + messageHeader +
+                ", messageBody=" + messageBody +
+                '}';
+    }
 }
