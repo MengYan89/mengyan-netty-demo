@@ -15,4 +15,11 @@ public class KeepaliveOperation extends Operation {
         KeepaliveOperationResult orderResponse = new KeepaliveOperationResult(time);
         return orderResponse;
     }
+
+    @Override
+    public String toString() {
+        return "KeepaliveOperation{" +
+                "time=" + time +
+                '}';
+    }
 }

@@ -28,4 +28,12 @@ public class AuthOperation extends Operation {
     public String getPassword() {
         return password;
     }
+
+    @Override
+    public String toString() {
+        return "AuthOperation{" +
+                "userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

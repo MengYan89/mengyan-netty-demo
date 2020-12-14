@@ -12,4 +12,11 @@ public class AuthOperationResult extends OperationResult {
     public boolean isPassAuth() {
         return passAuth;
     }
+
+    @Override
+    public String toString() {
+        return "AuthOperationResult{" +
+                "passAuth=" + passAuth +
+                '}';
+    }
 }

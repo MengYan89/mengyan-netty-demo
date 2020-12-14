@@ -12,4 +12,11 @@ public class KeepaliveOperationResult extends OperationResult {
     public long getTime() {
         return time;
     }
+
+    @Override
+    public String toString() {
+        return "KeepaliveOperationResult{" +
+                "time=" + time +
+                '}';
+    }
 }
