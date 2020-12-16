@@ -9,6 +9,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import io.netty.util.concurrent.DefaultThreadFactory;
 import org.mengyan.netty.server.codec.OrderFrameDecoder;
 import org.mengyan.netty.server.codec.OrderFrameEncoder;
 import org.mengyan.netty.server.codec.OrderProtocolDecoder;
@@ -25,7 +26,11 @@ public class Server {
 
         serverBootstrap.handler(new LoggingHandler(LogLevel.INFO));
 
-        serverBootstrap.group(new NioEventLoopGroup());
+        NioEventLoopGroup boss = new NioEventLoopGroup(0, new DefaultThreadFactory("boss"));
+
+        NioEventLoopGroup worker = new NioEventLoopGroup(0, new DefaultThreadFactory("worker"));
+
+        serverBootstrap.group(boss, worker);
 
         serverBootstrap.childHandler(new ChannelInitializer<NioSocketChannel>() {
             @Override
