@@ -37,11 +37,11 @@ public class Server {
             protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
                 ChannelPipeline channelPipeline = nioSocketChannel.pipeline();
 
-                channelPipeline.addLast(new OrderFrameDecoder());
-                channelPipeline.addLast(new OrderFrameEncoder());
-                channelPipeline.addLast(new OrderProtocolDecoder());
-                channelPipeline.addLast(new OrderProtocolEncoder());
-                channelPipeline.addLast(new OrderServerProcessHandler());
+                channelPipeline.addLast("frameDecoder",new OrderFrameDecoder());
+                channelPipeline.addLast("frameEncoder" ,new OrderFrameEncoder());
+                channelPipeline.addLast("protocolDecoder", new OrderProtocolDecoder());
+                channelPipeline.addLast("protocolEncoder",new OrderProtocolEncoder());
+                channelPipeline.addLast("serverProcessHandler", new OrderServerProcessHandler());
 
                 channelPipeline.addLast(new LoggingHandler(LogLevel.INFO));
 
